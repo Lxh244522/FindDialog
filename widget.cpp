@@ -55,7 +55,7 @@ Widget::~Widget()
 
 void Widget::findClicked()
 {
-    QString text = lineEdit->test();
+    QString text = lineEdit->text();
     Qt::CaseSensitivity cs =
             caseCheckBox->isChecked() ? Qt::CaseSensitive
                                       : Qt::CaseInsensitive;
