@@ -55,7 +55,15 @@ Widget::~Widget()
 
 void Widget::findClicked()
 {
-
+    QString text = lineEdit->test();
+    Qt::CaseSensitivity cs =
+            caseCheckBox->isChecked() ? Qt::CaseSensitive
+                                      : Qt::CaseInsensitive;
+    if(backwardCheckBox->isChecked()){
+        emit findPrevious(text, cs);
+    } else {
+        emit findNext(text, cs);
+    }
 }
 
 void Widget::enableFindButton(const QString &text)
